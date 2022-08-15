@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.id == current_user.id && @user.update(params.require(:user).permit(user_params))
+    if @user.id == current_user.id && @user.update(def user_params)
       redirect_to action: :profile
     else
       redirect_to action: :profile
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:reservation).permit(:image, :username, :profile)
+    params.require(:user).permit(:image, :username, :profile)
   end
 end
