@@ -1,0 +1,52 @@
+<div class="container-fiuld user">
+  <div class="row">
+    <%= render "shared/user2" %>
+    <div class="col-lg-10 user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row">
+            <h5>プロフィール</h5>
+          </div>
+        </div>
+        <%= form_with model: @user, local: true do |f| %>
+          <div class="update-content">
+            <div class="row">
+              <div class="col-md-6 offset-md-3">
+                <div class="icon-box">
+                  <% if @user.image? %>
+                    <%= image_tag current_user.image.url, alt: "プロフィール画像", class: "icon-image host-icon" %>
+                  <% else %>
+                    <%= image_tag "logo.jpeg", alt: "プロフィール画像", size: "200", class: "icon-image host-icon" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label :image, "アイコン画像", class: "col-md-3 required-a" %>
+              <%= f.file_field :image, class: "mb-4 col-md-9" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label :username, "名前", class: "col-md-3 required-a" %>
+              <%= f.text_field :username, class: "form-control mb-4 col-md-9" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label :profile, "自己紹介", class: "col-md-3 required-a" %>
+              <%= f.text_area :profile, class: "form-control mb-4 col-md-9", placeholder: "自己紹介" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+            <%= f.submit "更新", class: "col-md-2 btn btn-primary mx-3" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
