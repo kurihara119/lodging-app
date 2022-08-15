@@ -9,6 +9,6 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :username, presence: true
-  validates :profile, presence: true
-  validates :image, presence: true
+  validates :profile, presence: true, on: :update
+  validates :image, presence: true, on: :update
 end
