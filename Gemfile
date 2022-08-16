@@ -38,7 +38,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem "bulma-rails"
 gem 'carrierwave'
-gem 'pry-byebug'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'rails-i18n'
