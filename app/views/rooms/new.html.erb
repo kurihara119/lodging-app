@@ -1,0 +1,55 @@
+<div class="container-fiuld room-new">
+  <div class="row">
+    <div class="col-lg-2 room-nav room-nav-pc d-lg-block d-none">
+      <ul>
+        <li class="active"><a href="/rooms/new">基本情報</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-10 room-view">
+      <div class="room-view-box">
+        <%= form_with model: @room, class:"new-room", local: true do |f| %>
+          <div class="update-content">
+            <div class="room-new-row">
+              <h5>ルーム情報登録</h5>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="room-new-row">
+              <%= f.label :room_name, "ルーム名" , class:"col-md-3 required-a" %>
+              <%= f.text_field :room_name, class:"form-control mb-4 col-mb-9", placeholder: "ルーム名を入力" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="room-new-row">
+              <%= f.label :room_text, "ルーム紹介" , class:"col-md-3 required-a" %>
+              <%= f.text_area :room_text, class:"form-control mb-4 col-mb-9", placeholder: "ルーム説明を入力" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="room-new-row">
+              <%= f.label :price, "料金" , class:"col-md-3 required-a" %>
+              <%= f.text_field :price, class:"form-control mb-4 col-mb-9", placeholder: "一日あたりの料金を入力" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="room-new-row">
+              <%= f.label :address, "住所" , class:"col-md-3 required-a" %>
+              <%= f.text_field :address, class:"form-control mb-4 col-mb-9", placeholder: "住所を入力" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="room-new-row">
+              <%= f.label :image, "ルーム画像" , class:"col-md-3 required-a" %>
+              <%= f.file_field :image, class:"mb-4 col-mb-9" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="room-new-row">
+              <%= f.submit "登録", class:"col-md-2 btn btn-primary mx-3" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
